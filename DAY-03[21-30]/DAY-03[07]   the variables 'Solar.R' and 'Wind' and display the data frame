@@ -1,0 +1,17 @@
+data <- airquality
+
+if (is.data.frame(data)) {
+  cat("The 'airquality' dataset is a data frame.\n")
+} else {
+  cat("The 'airquality' dataset is not a data frame.\n")
+}
+
+ordered_data <- data[order(data$Ozone, data$Solar.R), ]
+
+cat("\nOrdered Data Frame:\n")
+print(ordered_data)
+
+data_without_solar_wind <- data[, !(names(data) %in% c("Solar.R", "Wind"))]
+
+cat("\nData Frame without 'Solar.R' and 'Wind':\n")
+print(data_without_solar_wind)

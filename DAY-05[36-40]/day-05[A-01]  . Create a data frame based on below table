@@ -1,0 +1,14 @@
+data <- data.frame(
+  Month = c(1, rep(NA, 2), 2:12),
+  Spends = c(1000, 5000, 3000, 9000, 94871, 8, 11000, 15000, 12000, 7000, 9914, 2, 4000, 4000, 54324, 34719, 118914, 158484, 3000, 78504, 36284, 131348),
+  Sales = c(4500, 50044, 5, 4000, 42551, 7, 11000, 15000, 12000, 7000, 9914, 4000, 40487, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+)
+
+data <- na.omit(data)
+
+model <- lm(Sales ~ Spends, data = data)
+
+summary(model)
+
+plot(data$Spends, data$Sales, main = "Regression Model: Sales vs Spends", xlab = "Spends", ylab = "Sales")
+abline(model, col = "red")

@@ -1,0 +1,11 @@
+data <- data.frame(
+  Height = c(66, 62, 63, 70, 74),
+  GPA = c(3.80, 3.78, 3.88, 3.72, 3.69)
+)
+
+print(data)
+mean_height <- mean(data$Height)
+mean_gpa <- mean(data$GPA)
+
+print(paste("Mean Height:", mean_height))
+print(paste("Mean GPA:", mean_gpa))
